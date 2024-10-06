@@ -50,25 +50,39 @@ function App() {
           <Hero />
         </div>
 
+
+
+
+
         {categories.map((category, index) => (
-          <div key={index} className="snap-start min-h-screen bg-blue-500">
-            <FullScreenSection {...category} imageOnLeft={index % 2 === 0} />
+          <div className="snap-start min-h-screen bg-blue-500">
+
+            <div key={index} >
+              <FullScreenSection {...category} imageOnLeft={index % 2 === 0} />
+            </div>
           </div>
+
         ))}
 
-        {/* <div className="snap-start min-h-screen">
+
+
+
+
+        <div className="snap-start">
+
           <EcomCategories />
-        </div> */}
+        </div>
 
 
 
         <div className="snap-start min-h-screen">
           <CustomQuote />
+          <StatsBanner />
 
         </div>
         <div className="snap-start">
           <Testimonial />
-          <StatsBanner />
+
         </div>
 
         <div className="snap-start">

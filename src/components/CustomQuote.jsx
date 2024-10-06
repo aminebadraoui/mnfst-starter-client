@@ -2,7 +2,7 @@ import React from 'react';
 
 function CustomQuote() {
     return (
-        <section id="custom-quote" className="min-h-screen bg-gray-100 flex items-center justify-center py-20">
+        <section id="custom-quote" className="bg-gray-100 flex items-center justify-center py-20">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-center">Request a Custom Quote</h2>
                 <div className="flex flex-col md:flex-row gap-8">

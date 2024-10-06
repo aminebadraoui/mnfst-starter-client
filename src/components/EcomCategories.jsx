@@ -9,9 +9,9 @@ function EcomCategories() {
     ];
 
     return (
-        <section id="ecom-categories" className="h-screen bg-gray-100 flex flex-col items-center justify-center pt-20 pb-4 px-20 border">
-            <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Shop Our Collection</h2>
-            <div className="w-full  flex-grow">
+        <section id="ecom-categories" className="bg-gray-100 flex flex-col items-center justify-center pt-20 pb-4 px-20 border">
+            <h2 className="text-3xl font-bold m-6 text-center text-gray-800">Shop Our Collection</h2>
+            <div className="w-full  m-6 flex-grow">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
                     {ecomCategories.map((category, index) => (
                         <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
