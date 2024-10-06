@@ -20,7 +20,7 @@ function Hero() {
                     Explore Our Work
                 </a>
             </div>
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-800 text-4xl animate-bounce cursor-pointer z-20" onClick={scrollToNextSection}>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-50 text-4xl animate-bounce cursor-pointer z-20" onClick={scrollToNextSection}>
                 <FaChevronDown />
             </div>
         </section>
