@@ -2,45 +2,33 @@ import React from 'react';
 import Header from './components/Header';
 import FullScreenSection from './components/FullScreenSection';
 import Hero from './components/Hero';
-import { FaChevronDown } from 'react-icons/fa';
 import CustomQuote from './components/CustomQuote';
 import EcomCategories from './components/EcomCategories';
 import Testimonial from './components/Testimonial';
 import StatsBanner from './components/StatsBanner';
 import Footer from './components/Footer';
 
-const categories = [
+const services = [
   {
-    title: 'Custom Furniture',
-    subtitle: 'Bespoke pieces tailored to your style',
-    image: 'https://images.pexels.com/photos/6707628/pexels-photo-6707628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'Custom SaaS Solutions',
+    subtitle: 'Turning your ideas into powerful, scalable software',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
     imageOnLeft: true
   },
   {
-    title: 'Kitchen Cabinetry',
-    subtitle: 'Functional and stylish storage solutions',
-    image: 'https://images.pexels.com/photos/3214064/pexels-photo-3214064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'Code Templates',
+    subtitle: 'Ready-to-use solutions for quick deployment',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     imageOnLeft: false
   },
   {
-    title: 'Wooden Flooring',
-    subtitle: 'Durable and elegant flooring options',
-    image: 'https://images.pexels.com/photos/5089153/pexels-photo-5089153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    imageOnLeft: true
-  },
-  {
-    title: 'Outdoor Woodwork',
-    subtitle: 'Enhance your outdoor living spaces',
-    image: 'https://images.pexels.com/photos/5997993/pexels-photo-5997993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    imageOnLeft: false
-  },
-  {
-    title: 'Wooden Accessories',
-    subtitle: 'Small touches for a big impact',
-    image: 'https://images.pexels.com/photos/4846455/pexels-photo-4846455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'Consultation Services',
+    subtitle: 'Expert advice to guide your SaaS journey',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     imageOnLeft: true
   }
 ];
+
 function App() {
   return (
     <div className="App">
@@ -50,39 +38,23 @@ function App() {
           <Hero />
         </div>
 
-
-
-
-
-        {categories.map((category, index) => (
-          <div className="snap-start min-h-screen bg-blue-500">
-
-            <div key={index} >
-              <FullScreenSection {...category} imageOnLeft={index % 2 === 0} />
-            </div>
+        {services.map((service, index) => (
+          <div key={index} className="snap-start min-h-screen">
+            <FullScreenSection {...service} imageOnLeft={service.imageOnLeft} />
           </div>
-
         ))}
 
-
-
-
-
         <div className="snap-start">
-
           <EcomCategories />
         </div>
-
-
 
         <div className="snap-start min-h-screen">
           <CustomQuote />
           <StatsBanner />
-
         </div>
+
         <div className="snap-start">
           <Testimonial />
-
         </div>
 
         <div className="snap-start">
