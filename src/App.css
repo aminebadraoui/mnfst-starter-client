@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.tech-loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.mnfst-journey {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.journey-step {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.journey-arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+}
+
+.step-content {
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.journey-step:nth-child(1) { animation-delay: 0.1s; }
+.journey-step:nth-child(3) { animation-delay: 0.3s; }
+.journey-step:nth-child(5) { animation-delay: 0.5s; }
+.journey-step:nth-child(7) { animation-delay: 0.7s; }
+.journey-step:nth-child(9) { animation-delay: 0.9s; }
