@@ -1,41 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import { motion, AnimatePresence } from 'framer-motion';
-import { Header, } from '@mnfst-kit/shared-components';
-import { FullScreenSection } from '@mnfst-kit/shared-components'
-import { HeroV2 } from '@mnfst-kit/shared-components'
-import { ConsultationSection } from '@mnfst-kit/shared-components'
-import { SimpleCategoryCard } from '@mnfst-kit/shared-components';
-import { Testimonial } from '@mnfst-kit/shared-components';
-import { StatsBanner } from '@mnfst-kit/shared-components';
-import { Footer } from '@mnfst-kit/shared-components';
-import HeroVanta from './components/HeroVanta';
 import TechLoader from './components/TechLoader';
-
-
-import { Button, Logo } from '@mnfst-kit/shared-components';
 import { Timeline } from './components/Timeline';
 
 import './App.css';
 
 import { FaLock, FaRocket, FaMoneyBillWave, FaHandshake, FaSearch, FaTools } from 'react-icons/fa';
 
-const headerContent = {
-  logoElement: <Logo title="MNFST" className="h-8" />, // Assuming you have a Logo component
-  navItems: [
-    { text: 'Home', url: '/' },
-    { text: 'About', url: '/about' },
-    { text: 'Services', url: '/services' },
-    { text: 'Contact', url: '/contact' },
-  ],
-  extraElement: (
-    <Button
-      title="Get Started"
-      onClick={() => console.log('Get Started clicked')}
-      className="bg-gray-900-500 hover:bg-gray-900-600 text-white"
-    />
-  ),
-};
+
 
 
 const footerContent = {
