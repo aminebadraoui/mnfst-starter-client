@@ -100,28 +100,45 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl font-bold mb-6">Manifesting Digital Visions</h1>
+          <h1 className="text-5xl font-bold mb-6">MNFST</h1>
           <p className="text-xl mb-8 max-w-2xl text-center">
-            At MNFST, we believe in the power of manifestation. We transform your ideas into digital reality, blending cutting-edge technology with the energy of intention.
+            At MNFST, we believe that building software is the power of manifesting a digital vision. We transform your ideas into reality, blending cutting-edge technology with innovative design to create impactful digital solutions that resonate with your audience and drive your business forward.
           </p>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, staggerChildren: 0.2 }}
-          >
-            <motion.div className="bg-gray-900 p-6 rounded-lg shadow-lg" whileHover={{ scale: 1.05 }}>
-              <h3 className="text-2xl font-semibold mb-4">Visionary Approach</h3>
-              <p>We see beyond code, crafting digital experiences that resonate with your audience.</p>
-            </motion.div>
-            <motion.div className="bg-gray-900 p-6 rounded-lg shadow-lg" whileHover={{ scale: 1.05 }}>
-              <h3 className="text-2xl font-semibold mb-4">Spiritual Tech</h3>
-              <p>Merging the digital realm with mindful intention for truly impactful solutions.</p>
-            </motion.div>
-          </motion.div>
         </motion.div>
       ),
     },
+    // {
+    //   title: "Visionary Approach",
+    //   content: (
+    //     <motion.div
+    //       className="min-h-screen bg-gray-900/50 text-white flex flex-col justify-center items-center p-8"
+    //       initial={{ opacity: 0 }}
+    //       animate={{ opacity: 1 }}
+    //       transition={{ duration: 1 }}
+    //     >
+    //       <h2 className="text-4xl font-bold mb-6">Visionary Approach</h2>
+    //       <p className="text-xl mb-8 max-w-2xl text-center">
+    //         We see beyond code, crafting digital experiences that resonate with your audience. Our visionary approach combines foresight, creativity, and technical expertise to build solutions that not only meet your current needs but also anticipate future trends and opportunities.
+    //       </p>
+    //     </motion.div>
+    //   ),
+    // },
+    // {
+    //   title: "Spiritual Tech",
+    //   content: (
+    //     <motion.div
+    //       className="min-h-screen bg-gray-900/50 text-white flex flex-col justify-center items-center p-8"
+    //       initial={{ opacity: 0 }}
+    //       animate={{ opacity: 1 }}
+    //       transition={{ duration: 1 }}
+    //     >
+    //       <h2 className="text-4xl font-bold mb-6">Spiritual Tech</h2>
+    //       <p className="text-xl mb-8 max-w-2xl text-center">
+    //         Merging the digital realm with mindful intention, we create truly impactful solutions. Our spiritual tech approach infuses your digital presence with purpose, authenticity, and a deeper connection to your users, fostering meaningful engagement and lasting impact.
+    //       </p>
+    //     </motion.div>
+    //   ),
+    // },
     {
       title: "What We Do",
       content: (

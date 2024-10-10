@@ -1,12 +1,12 @@
-const sharedConfig = require('@mnfst-kit/shared-components/tailwind.config.js');
+// const sharedConfig = require('@mnfst-kit/shared-components/tailwind.config.js');
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  presets: [sharedConfig],
+
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "../../packages/shared-components/src/**/*.{js,jsx,ts,tsx}"
+    // "../../packages/shared-components/src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
