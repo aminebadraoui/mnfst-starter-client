@@ -21,9 +21,11 @@ const corners = [
 
 const TechLoader = () => {
     const messages = [
+        "WE ARE", "MNFST",
         "CHANNELING", "POSITIVE", "ENERGY",
         "VISUALIZING", "YOUR INTENTIONS",
         "MATERIALIZING", "YOUR THOUGHTS",
+        "WE ARE", "MNFST"
     ];
 
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
