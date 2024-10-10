@@ -12,11 +12,9 @@ const scrollToNextSection = () => {
 };
 
 const corners = [
-    { top: '40px', left: '10%' },
-    { bottom: '40px', right: '20%' },
-    { top: '50%', left: '20%' },
-    { top: '40px', right: '140px' },
-    { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
+
+
+
 ];
 
 const TechLoader = () => {
@@ -25,7 +23,6 @@ const TechLoader = () => {
         "CHANNELING", "POSITIVE", "ENERGY",
         "VISUALIZING", "YOUR INTENTIONS",
         "MATERIALIZING", "YOUR THOUGHTS",
-        "WE ARE", "MNFST"
     ];
 
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -75,7 +72,7 @@ const TechLoader = () => {
             <div
                 key={currentMessageIndex} // Add this line
                 className="message-container"
-                style={corners[currentMessageIndex % corners.length]}
+
             >
                 <p className="message-text typing-animation">
                     {messages[currentMessageIndex]}

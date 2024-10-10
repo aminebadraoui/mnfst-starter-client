@@ -104,7 +104,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    
+
     
     display: flex;
     align-items: center;
@@ -124,11 +124,12 @@
 .message-container {
     position: absolute;
     max-width: 100%;
-    padding: 20px;
+    
+   
 }
 
 .message-text {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #a0aec0;
     font-weight: bold;
     white-space: nowrap;
