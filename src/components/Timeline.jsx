@@ -62,12 +62,12 @@ export const Timeline = ({ data, containerRef }) => {
                                         className="hidden md:block h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
                                 </div>
                                 <h3
-                                    className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
+                                    className="hidden md:block text-xl md:pl-20 md:text-4xl md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
                                     {item.title}
                                 </h3>
                             </div>
 
-                            <div className="relative pl-0 md:pl-20 pr-2 md:pl-4 w-full">
+                            <div className="relative px-2 md:pl-20  md:pl-4 w-full">
                                 <AnimatePresence key={index}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 0 }}

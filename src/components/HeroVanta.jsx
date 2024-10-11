@@ -39,7 +39,7 @@ function HeroVanta({
     }, []);
 
     const scrollToNextSection = () => {
-        const nextSection = document.querySelector('.snap-start:nth-child(3)');
+        const nextSection = document.querySelector('.snap-section:nth-child(3)');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
         }

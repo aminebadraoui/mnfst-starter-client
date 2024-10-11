@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
 const scrollToNextSection = () => {
-    const nextSection = document.querySelector('.snap-start:nth-child(2)');
+    const nextSection = document.querySelector('.snap-section:nth-child(2)');
     if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth' });
     }
