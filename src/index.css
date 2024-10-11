@@ -14,7 +14,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+@media (min-width: 768px) {
 .snap-y {
   scroll-snap-type: y mandatory;
 }
@@ -33,4 +33,5 @@ html, body {
 
 .snap-section-content {
   min-height: 100%;
+}
 }

@@ -1,19 +1,9 @@
 .app-container {
   height: 100vh;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y ;
 }
 
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vh;
-  overflow-y: auto;
-}
-
-.snap-section-content {
-  min-height: 100%;
-}
 
 .App-logo {
   height: 40vmin;
