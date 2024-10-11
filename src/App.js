@@ -44,23 +44,22 @@ function App() {
 
   const timelineData = [
     {
-      title: "Who We Are",
+      title: "MNFST",
       content: (
-
-        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-center p-8">
+        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-center space-y-12 p-8">
           <motion.h2
-            className="text-5xl font-bold text-center relative z-10 mb-16"
+            className="text-5xl font-bold text-center"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            MNFST
+            We Are...
           </motion.h2>
-          <motion.div className='flex flex-col items-center space-y-12'>
-            <motion.div className='w-full max-w-6xl flex flex-row space-x-12 items-center text-center justify-center mb-6'>
+          <motion.div className='flex flex-col w-full items-center space-y-12'>
+            <motion.div className=' flex flex-wrap  items-center text-center justify-center '>
               {["MANIFESTORS", "INNOVATORS", "CREATORS",].map((item, index) => (
                 <div key={index}
-                  className={`w-1/4 text-gradient-to-r from-purple-500 to-indigo-500  p-4  rounded-lg shadow-lg shadow-purple-500/50`}
+                  className={` flex-1 p-4 m-4 rounded-lg shadow-lg shadow-purple-500/50`}
                   style={{
                     boxShadow: '0 0 0 2px rgba(147, 51, 234, 0.5)',
                     background: 'linear-gradient(to right, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))'
@@ -88,7 +87,7 @@ function App() {
                 >
                   <div className="flex items-center justify-center space-x-8">
 
-                    <p className="w-2/3 text-center">
+                    <p className="w-2/3 text-left md:text-center">
                       {item.title === "INNOVATE"
                         ? "We push the boundaries of digital experiences, crafting solutions that stand out in the crowded digital landscape."
                         : item.title === "CREATE"
@@ -113,17 +112,15 @@ function App() {
     {
       title: "What We Do",
       content: (
-        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center p-8">
-          <div className="flex-1 flex items-center justify-center w-full">
-            <motion.h2
-              className="text-5xl font-bold text-center relative z-10"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Crafting Digital Experiences
-            </motion.h2>
-          </div>
+        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
+          <motion.h2
+            className="text-5xl font-bold text-center relative"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Crafting Your Digital Vision
+          </motion.h2>
           <div className="flex-1 w-full max-w-6xl">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
@@ -159,18 +156,18 @@ function App() {
     {
       title: "What We Offer",
       content: (
-        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center p-8">
-          <div className="flex-1 flex items-center justify-center w-full">
-            <motion.h2
-              className="text-5xl font-bold text-center relative z-10"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Our Promises
-            </motion.h2>
-          </div>
-          <div className="flex-1 w-full max-w-6xl">
+        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
+
+          <motion.h2
+            className="text-5xl font-bold text-center relative z-10"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our Promises
+          </motion.h2>
+
+          <div className="w-full max-w-6xl">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
               initial={{ opacity: 0 }}
@@ -206,7 +203,7 @@ function App() {
       title: "Our Process",
       content: (
         <motion.div
-          className="snap-start min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col space-y-12 justify-center items-center p-8"
+          className="snap-start min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col space-y-12 justify-center items-center space-y-12 p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -260,7 +257,7 @@ function App() {
     {
       title: "Pricing",
       content: (
-        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-center p-8">
+        <motion.div className="snap-start min-h-screen bg-gray-900/50 text-white flex flex-col items-centers space-y-12 p-8">
           <div className="flex-1 flex items-center justify-center w-full">
             <motion.h2
               className="text-5xl font-bold text-center relative z-10"
@@ -318,7 +315,7 @@ function App() {
       content: (
         <motion.div
           data-section="Get in Touch"
-          className="snap-start min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col items-center p-8"
+          className="snap-start min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col items-center space-y-12 p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -411,7 +408,7 @@ function App() {
   }, []);
 
   return (
-    <div ref={containerRef} className="app h-screen w-full bg-gray-950 snap-y overflow-y-scroll">
+    <div ref={containerRef} className="app h-screen w-full bg-gray-950 snap-y overflow-y-scroll overflow-x-hidden">
       <div className="snap-start">
         <TechLoader />
       </div>

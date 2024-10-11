@@ -23,6 +23,7 @@ const TechLoader = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
+            console.log("Current message:", messages[currentMessageIndex]);
 
             setCurrentMessageIndex(prevIndex => (prevIndex + 1) % messages.length);
 
@@ -63,14 +64,21 @@ const TechLoader = () => {
                     </div>
                 </div>
             </div>
-            <div
-                key={currentMessageIndex} // Add this line
-                className="message-container"
-
-            >
-                <p className="message-text typing-animation">
-                    {messages[currentMessageIndex]}
-                </p>
+            <div key={currentMessageIndex} className="message-container">
+                {messages[currentMessageIndex].split(' ').map((word, wordIndex) => (
+                    <span key={wordIndex} className="word-wrapper">
+                        {word.split('').map((char, charIndex) => (
+                            <span
+                                key={charIndex}
+                                className="typing-animation"
+                                style={{ animationDelay: `${(wordIndex * word.length + charIndex) * 0.05}s` }}
+                            >
+                                {char}
+                            </span>
+                        ))}
+                        {wordIndex !== messages[currentMessageIndex].split(' ').length - 1 && ' '}
+                    </span>
+                ))}
             </div>
 
             <motion.div

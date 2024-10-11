@@ -128,28 +128,42 @@
 }
 
 .message-container {
-    position: absolute;
-    max-width: 100%;
-    
-   
+    position: relative;
+    max-width: 90%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 60;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .message-text {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #a0aec0;
     font-weight: bold;
-    white-space: nowrap;
-    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
 }
+
+.word-wrapper {
+    display: inline-block;
+    margin-right: 0.25em;
+}
+
 
 .typing-animation {
     display: inline-block;
-    overflow: hidden;
-    border-right: .15em solid #a0aec0;
-    animation: 
-        typing 1.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+    opacity: 0;
+    animation: fadeIn 0.01s forwards;
+    white-space: pre-wrap;
 }
+
+
 
 @keyframes typing {
     from { width: 0 }
