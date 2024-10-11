@@ -11,18 +11,12 @@ const scrollToNextSection = () => {
     }
 };
 
-const corners = [
-
-
-
-];
-
 const TechLoader = () => {
     const messages = [
-        "WE ARE", "MNFST",
-        "CHANNELING", "POSITIVE", "ENERGY",
-        "VISUALIZING", "YOUR INTENTIONS",
-        "MATERIALIZING", "YOUR THOUGHTS",
+        "WE ARE MNFST",
+        "CHANNELING POSITIVE ENERGY",
+        "VISUALIZING INTENTIONS",
+        "MATERIALIZING THOUGHTS",
     ];
 
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -32,7 +26,7 @@ const TechLoader = () => {
 
             setCurrentMessageIndex(prevIndex => (prevIndex + 1) % messages.length);
 
-        }, 2500);
+        }, 1800);
 
         return () => clearTimeout(timer);
     }, [currentMessageIndex, messages.length]);

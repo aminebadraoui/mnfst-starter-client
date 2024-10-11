@@ -13,6 +13,18 @@
   }
 }
 
+.clip-path-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.clip-path-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.clip-path-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -67,11 +79,16 @@
 }
 
 .journey-step {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   padding: 20px;
   margin: 10px 0;
   width: 100%;
+}
+
+.journey-step:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
 }
 
 .journey-arrow {
