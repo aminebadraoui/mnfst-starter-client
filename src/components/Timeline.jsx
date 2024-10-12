@@ -62,7 +62,7 @@ export const Timeline = ({ data, containerRef }) => {
                                         className="hidden md:block h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
                                 </div>
                                 <motion.h3
-                                    className="hidden md:block text-xl md:pl-20 md:text-3xl  font-bold text-gray-500 "
+                                    className="hidden md:block text-xl md:pl-20 md:text-2xl md:text-3xl  font-bold text-gray-500 "
                                     initial={{ opacity: 0, y: 0 }}
                                     whileInView={{
                                         opacity: 1,
@@ -70,7 +70,7 @@ export const Timeline = ({ data, containerRef }) => {
                                         y: 0
                                     }}
                                     viewport={{ amount: 0.3 }}
-                                    transition={{ duration: 2 }}
+                                    transition={{ duration: 1 }}
 
                                 >
                                     {item.title}
@@ -82,7 +82,7 @@ export const Timeline = ({ data, containerRef }) => {
                                     <motion.div
                                         initial={{ opacity: 0, y: 0 }}
                                         whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ amount: 0.3 }}
+                                        viewport={{ amount: 0.2 }}
                                         transition={{ duration: 0.3 }}
                                     >
                                         {/* <h2

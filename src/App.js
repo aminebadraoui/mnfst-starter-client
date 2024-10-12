@@ -77,7 +77,7 @@ function App() {
         >
           <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-3xl font-bold text-center"
+              className="text-2xl md:text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -132,14 +132,14 @@ function App() {
       title: "What We Do",
       content: (
         <motion.div
-          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between p-8"
+          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between  p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-3xl font-bold text-center"
+              className="text-2xl md:text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -168,9 +168,9 @@ function App() {
                   transition={{ delay: index * 0.2 }}
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
                 >
-                  <item.icon className="text-4xl text-white mb-4" />
-                  <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                  <p className="text-lg">{item.description}</p>
+                  <item.icon className="text-2xl md:text-3xl md:text-4xl text-white mb-4" />
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4">{item.title}</h3>
+                  <p className="text-md md:text-lg">{item.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -184,7 +184,7 @@ function App() {
     //     <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
     //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
     //         <motion.h2
-    //           className="text-3xl  font-bold text-center relative z-10"
+    //           className="text-2xl md:text-3xl  font-bold text-center relative z-10"
     //           initial={{ opacity: 0, y: -50 }}
     //           animate={{ opacity: 1, y: 0 }}
     //           transition={{ duration: 0.8 }}
@@ -213,7 +213,7 @@ function App() {
     //                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
     //               >
     //                 <div className="relative z-10">
-    //                   <item.icon className="text-3xl mb-4 text-white" />
+    //                   <item.icon className="text-2xl md:text-3xl mb-4 text-white" />
     //                   <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
     //                   <p>{item.description}</p>
     //                 </div>
@@ -236,7 +236,7 @@ function App() {
         >
           {/* <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-3xl font-bold text-center"
+              className="text-2xl md:text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -282,7 +282,7 @@ function App() {
 
     //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
     //         <motion.h2
-    //           className="text-3xl  font-bold text-center relative z-10"
+    //           className="text-2xl md:text-3xl  font-bold text-center relative z-10"
     //           initial={{ opacity: 0, y: -50 }}
     //           animate={{ opacity: 1, y: 0 }}
     //           transition={{ duration: 0.8 }}
@@ -305,7 +305,7 @@ function App() {
     //               >
     //                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/50 to-indigo-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     //                 <div className="relative z-10">
-    //                   <h3 className="text-3xl font-semibold mb-4">{plan}</h3>
+    //                   <h3 className="text-2xl md:text-3xl font-semibold mb-4">{plan}</h3>
     //                   <ul className="list-disc list-inside space-y-2 mb-6">
     //                     {plan === "Monthly Plan" ? (
     //                       <>
@@ -345,7 +345,7 @@ function App() {
         >
           <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-3xl font-bold text-center"
+              className="text-2xl md:text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
