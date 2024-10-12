@@ -67,121 +67,114 @@ function App() {
 
   const timelineData = [
     {
-      title: "MNFST",
+      title: " Who We Are",
       content: (
-        <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-center space-y-12 p-8">
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
+        <motion.div
+          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-center"
+              className="text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              We Are...
+              MNFST
             </motion.h2>
-            <motion.div className='flex flex-col w-full items-center space-y-12'>
-              <motion.div className=' flex flex-wrap  items-center text-center justify-center '>
-                {["MANIFESTORS", "INNOVATORS", "CREATORS",].map((item, index) => (
-                  <div key={index}
-                    className={` flex-1 p-4 m-4 rounded-lg shadow-lg shadow-purple-500/50`}
-                    style={{
-                      boxShadow: '0 0 0 2px rgba(147, 51, 234, 0.5)',
-                      background: 'linear-gradient(to right, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))'
-                    }}>
-                    <h3 className="text-sm text-center">{item}</h3>
-                  </div>
-
-                ))}
-              </motion.div>
-
-              <div className="w-full max-w-6xl space-y-8 mb-6">
-                {[
-                  { title: "MANIFEST", color: "from-purple-500 to-indigo-500" },
-                  { title: "INNOVATE", color: "from-purple-500 to-indigo-500" },
-                  { title: "CREATE", color: "from-purple-500 to-indigo-500" },
-
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="w-full bg-gray-800/50 p-6 rounded-lg relative overflow-hidden group backdrop-blur-sm"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2 }}
-                    whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
-                  >
-                    <div className="flex items-center justify-center space-x-8">
-
-                      <p className="w-2/3 text-left md:text-center">
-                        {item.title === "INNOVATE"
-                          ? "We push the boundaries of digital experiences, crafting solutions that stand out in the crowded digital landscape."
-                          : item.title === "CREATE"
-                            ? "Our team of skilled developers and designers bring your vision to life with precision and creativity."
-                            : "We transform ideas into reality, helping you manifest your digital presence and achieve your goals."}
-                      </p>
-                    </div>
-                    <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                  </motion.div>
-                ))}
-              </div>
-
-
-
-            </motion.div>
-
           </motion.div>
 
+          <motion.div className='flex flex-col  w-full items-center space-y-12 flex-1'>
+            <motion.div className='flex flex-wrap items-center text-center justify-center'>
+              {["MANIFESTORS", "INNOVATORS", "CREATORS"].map((item, index) => (
+                <motion.div key={index}
+                  whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
+                  className={`flex-1 p-4 m-4 rounded-md border-b border-purple-500 shadow-sm`}
+                >
+                  <h3 className="text-xl font-semibold">{item}</h3>
+                </motion.div>
+              ))}
+            </motion.div>
 
-
-
-
-
+            <div className="w-full max-w-lg space-y-8 mb-6">
+              {[
+                { title: "MANIFEST" },
+                { title: "INNOVATE" },
+                { title: "CREATE" },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="w-full bg-gray-800/50 p-6 rounded-lg relative overflow-hidden group"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-center justify-center space-x-8">
+                    <p className="w-full text-center">
+                      {item.title === "INNOVATE"
+                        ? "We push the boundaries of digital experiences, crafting solutions that stand out in the crowded digital landscape."
+                        : item.title === "CREATE"
+                          ? "Our team of skilled developers and designers bring your vision to life with precision and creativity."
+                          : "We transform ideas into reality, helping you manifest your digital presence and achieve your goals."}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       ),
     },
     {
       title: "What We Do",
       content: (
-        <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
+        <motion.div
+          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-center relative"
+              className="text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               Crafting Your Digital Vision
             </motion.h2>
-            <div className="flex-1 w-full max-w-6xl">
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, staggerChildren: 0.2 }}
-              >
-                {[
-                  { title: "Custom Solutions", icon: FaTools, description: "Tailored websites that fit your unique needs." },
-                  { title: "Optimized PageSpeed", icon: FaRocket, description: "Lightning-fast websites that keep your visitors engaged and improve SEO." },
-                  { title: "Clear Design", icon: FaPaintBrush, description: "Intuitive and visually appealing interfaces that enhance user experience." },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-gray-800/50 p-8 rounded-lg relative overflow-hidden group backdrop-blur-sm"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2 }}
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
-                  >
-                    <div className="relative z-10">
-                      <item.icon className="text-4xl mb-4 text-white" />
-                      <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
           </motion.div>
 
+          <motion.div className='flex flex-col w-full items-center space-y-12 flex-1'>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, staggerChildren: 0.2 }}
+            >
+              {[
+                { title: "Custom Solutions", icon: FaTools, description: "Tailored websites that fit your unique needs." },
+                { title: "Optimized PageSpeed", icon: FaRocket, description: "Lightning-fast websites that keep your visitors engaged and improve SEO." },
+                { title: "Clear Design", icon: FaPaintBrush, description: "Intuitive and visually appealing interfaces that enhance user experience." },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm flex flex-col items-left justify-start space-4 text-left h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
+                >
+                  <item.icon className="text-4xl text-white mb-4" />
+                  <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+                  <p className="text-lg">{item.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </motion.div>
       ),
     },
@@ -191,7 +184,7 @@ function App() {
     //     <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
     //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
     //         <motion.h2
-    //           className="text-4xl md:text-5xl font-bold text-center relative z-10"
+    //           className="text-3xl  font-bold text-center relative z-10"
     //           initial={{ opacity: 0, y: -50 }}
     //           animate={{ opacity: 1, y: 0 }}
     //           transition={{ duration: 0.8 }}
@@ -199,7 +192,7 @@ function App() {
     //           Our Promises
     //         </motion.h2>
 
-    //         <div className="w-full max-w-6xl">
+    //         <div className="w-full max-w-lg">
     //           <motion.div
     //             className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
     //             initial={{ opacity: 0 }}
@@ -220,7 +213,7 @@ function App() {
     //                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
     //               >
     //                 <div className="relative z-10">
-    //                   <item.icon className="text-4xl mb-4 text-white" />
+    //                   <item.icon className="text-3xl mb-4 text-white" />
     //                   <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
     //                   <p>{item.description}</p>
     //                 </div>
@@ -235,21 +228,24 @@ function App() {
     {
       title: "Our Process",
       content: (
-        <motion.div className="snap-section min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col space-y-12 justify-center items-center space-y-12 p-8"
+        <motion.div
+          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
+          {/* <motion.div className='flex-1 flex items-center justify-center w-full'>
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-center relative z-10"
+              className="text-3xl font-bold text-center"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               The MNFST Journey
             </motion.h2>
+          </motion.div> */}
 
+          <motion.div className='flex flex-col w-full items-center space-y-12 flex-1'>
             <motion.div
               className="mnfst-journey"
               initial={{ opacity: 0 }}
@@ -259,15 +255,12 @@ function App() {
               {["Envision", "Align", "Create", "Optimize", "Launch"].map((step, index) => (
                 <motion.div key={step}
                   className='w-full flex flex-col items-center'
-                  initial={{ opacity: 0, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ amount: 0.3 }}
-                  transition={{ duration: 2, delay: index * 0.3 }}>
-
+                  transition={{ duration: 0.5, delay: index * 0.1 }}>
                   <React.Fragment key={step}>
-                    <motion.div
-                      className="journey-step"
-                    >
+                    <motion.div className="journey-step">
                       <div className="step-content">
                         <h3 className="text-2xl font-semibold">{step}</h3>
                         <p>{getStepDescription(step)}</p>
@@ -275,11 +268,9 @@ function App() {
                     </motion.div>
                     {index < 4 && <div className="journey-arrow"></div>}
                   </React.Fragment>
-
                 </motion.div>
               ))}
             </motion.div>
-
           </motion.div>
         </motion.div>
       ),
@@ -291,7 +282,7 @@ function App() {
 
     //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
     //         <motion.h2
-    //           className="text-4xl md:text-5xl font-bold text-center relative z-10"
+    //           className="text-3xl  font-bold text-center relative z-10"
     //           initial={{ opacity: 0, y: -50 }}
     //           animate={{ opacity: 1, y: 0 }}
     //           transition={{ duration: 0.8 }}
@@ -299,7 +290,7 @@ function App() {
     //           Invest in Your Digital Future
     //         </motion.h2>
 
-    //         <div className="flex-1 w-full max-w-6xl">
+    //         <div className="flex-1 w-full max-w-lg">
     //           <motion.div
     //             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
     //             initial={{ y: 50, opacity: 0 }}
@@ -347,16 +338,23 @@ function App() {
       title: "Get in Touch",
       content: (
         <motion.div
-          data-section="Get in Touch"
-          className="snap-section min-h-screen bg-gray-900/50 opacity-80 text-white flex flex-col items-center space-y-12 p-8"
+          className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center justify-between p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
+          <motion.div className='flex-1 flex items-center justify-center w-full'>
+            <motion.h2
+              className="text-3xl font-bold text-center"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Let's Manifest Your Vision
+            </motion.h2>
+          </motion.div>
 
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
-            <h2 className="text-4xl font-bold text-center">Let's Manifest Your Vision</h2>
-
+          <motion.div className='flex flex-col w-full items-center space-y-12 flex-1'>
             <div className="flex-1 w-full max-w-lg">
               <motion.form
                 ref={form}
@@ -448,10 +446,7 @@ function App() {
                 )}
               </motion.form>
             </div>
-
           </motion.div>
-
-
         </motion.div>
       ),
     },

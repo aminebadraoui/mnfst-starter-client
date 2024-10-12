@@ -74,7 +74,7 @@ function HeroVanta({
                 </motion.button>
             </motion.div>
             {/* <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-50 text-4xl cursor-pointer z-20"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-50 text-3xl cursor-pointer z-20"
                 onClick={scrollToNextSection}
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}

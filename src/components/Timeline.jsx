@@ -62,7 +62,7 @@ export const Timeline = ({ data, containerRef }) => {
                                         className="hidden md:block h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
                                 </div>
                                 <motion.h3
-                                    className="hidden md:block text-xl md:pl-20 md:text-4xl md:text-5xl font-bold text-blue-500 "
+                                    className="hidden md:block text-xl md:pl-20 md:text-3xl  font-bold text-gray-500 "
                                     initial={{ opacity: 0, y: 0 }}
                                     whileInView={{
                                         opacity: 1,
