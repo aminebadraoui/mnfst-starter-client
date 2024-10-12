@@ -5,33 +5,5 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #030712;
 }
 
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media (min-width: 768px) {
-.snap-y {
-  scroll-snap-type: y mandatory;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-}
-
-
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vh;
-  overflow-y: auto;
-}
-
-.snap-section-content {
-  min-height: 100%;
-}
-}
