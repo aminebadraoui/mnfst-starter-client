@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TechLoader from './components/TechLoader';
 import { Timeline } from './components/Timeline';
+import emailjs from '@emailjs/browser';
 
 import './App.css';
 
@@ -11,6 +12,9 @@ import { FaLock, FaRocket, FaMoneyBillWave, FaHandshake, FaSearch, FaTools, FaPa
 function App() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [showTechLoader, setShowTechLoader] = useState(true);
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const form = useRef();
 
   useEffect(() => {
     const options = {
@@ -41,6 +45,25 @@ function App() {
       }
     };
   }, []);
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted');
+    setSubmissionStatus('submitting');
+
+    emailjs.sendForm('service_s2hc0vi', 'template_ajbzxee', form.current, {
+      publicKey: 'mBk6w-CEod73FbERq',
+    })
+      .then((result) => {
+        console.log('EmailJS success:', result.text);
+        setSubmissionStatus('success');
+        e.target.reset();
+      }, (error) => {
+        console.error('EmailJS error:', error.text);
+        setSubmissionStatus('error');
+      });
+  };
 
   const timelineData = [
     {
@@ -162,53 +185,53 @@ function App() {
         </motion.div>
       ),
     },
-    {
-      title: "What We Offer",
-      content: (
-        <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-center relative z-10"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Our Promises
-            </motion.h2>
+    // {
+    //   title: "What We Offer",
+    //   content: (
+    //     <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-center space-y-12 p-8">
+    //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
+    //         <motion.h2
+    //           className="text-4xl md:text-5xl font-bold text-center relative z-10"
+    //           initial={{ opacity: 0, y: -50 }}
+    //           animate={{ opacity: 1, y: 0 }}
+    //           transition={{ duration: 0.8 }}
+    //         >
+    //           Our Promises
+    //         </motion.h2>
 
-            <div className="w-full max-w-6xl">
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, staggerChildren: 0.2 }}
-              >
-                {[
-                  { title: "100% Secure Websites", icon: FaLock, description: "We ensure your website is protected against threats." },
-                  { title: "Unmatched Support", icon: FaHandshake, description: "We provide unmatched support to ensure your website runs smoothly." },
-                  { title: "Money Back Guarantee", icon: FaMoneyBillWave, description: "We offer a money back guarantee if you're not satisfied." },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-gray-800/50 p-8 rounded-lg relative overflow-hidden group backdrop-blur-sm"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2 }}
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
-                  >
-                    <div className="relative z-10">
-                      <item.icon className="text-4xl mb-4 text-white" />
-                      <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-        </motion.div>
-      ),
-    },
+    //         <div className="w-full max-w-6xl">
+    //           <motion.div
+    //             className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10"
+    //             initial={{ opacity: 0 }}
+    //             animate={{ opacity: 1 }}
+    //             transition={{ delay: 0.5, staggerChildren: 0.2 }}
+    //           >
+    //             {[
+    //               { title: "100% Secure Websites", icon: FaLock, description: "We ensure your website is protected against threats." },
+    //               { title: "Unmatched Support", icon: FaHandshake, description: "We provide unmatched support to ensure your website runs smoothly." },
+    //               { title: "Money Back Guarantee", icon: FaMoneyBillWave, description: "We offer a money back guarantee if you're not satisfied." },
+    //             ].map((item, index) => (
+    //               <motion.div
+    //                 key={index}
+    //                 className="bg-gray-800/50 p-8 rounded-lg relative overflow-hidden group backdrop-blur-sm"
+    //                 initial={{ opacity: 0, y: 50 }}
+    //                 animate={{ opacity: 1, y: 0 }}
+    //                 transition={{ delay: index * 0.2 }}
+    //                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
+    //               >
+    //                 <div className="relative z-10">
+    //                   <item.icon className="text-4xl mb-4 text-white" />
+    //                   <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+    //                   <p>{item.description}</p>
+    //                 </div>
+    //               </motion.div>
+    //             ))}
+    //           </motion.div>
+    //         </div>
+    //       </motion.div>
+    //     </motion.div>
+    //   ),
+    // },
     {
       title: "Our Process",
       content: (
@@ -261,65 +284,65 @@ function App() {
         </motion.div>
       ),
     },
-    {
-      title: "Pricing",
-      content: (
-        <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-centers space-y-12 p-8">
+    // {
+    //   title: "Pricing",
+    //   content: (
+    //     <motion.div className="snap-section min-h-screen bg-gray-900/50 text-white flex flex-col items-centers space-y-12 p-8">
 
-          <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-center relative z-10"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Invest in Your Digital Future
-            </motion.h2>
+    //       <motion.div className='snap-section-content flex flex-col items-center space-y-12'>
+    //         <motion.h2
+    //           className="text-4xl md:text-5xl font-bold text-center relative z-10"
+    //           initial={{ opacity: 0, y: -50 }}
+    //           animate={{ opacity: 1, y: 0 }}
+    //           transition={{ duration: 0.8 }}
+    //         >
+    //           Invest in Your Digital Future
+    //         </motion.h2>
 
-            <div className="flex-1 w-full max-w-6xl">
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, staggerChildren: 0.2 }}
-              >
-                {["One-Time Payment", "Monthly Plan"].map((plan, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-gray-900 p-8 rounded-lg shadow-lg relative overflow-hidden group"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/50 to-indigo-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative z-10">
-                      <h3 className="text-3xl font-semibold mb-4">{plan}</h3>
-                      <ul className="list-disc list-inside space-y-2 mb-6">
-                        {plan === "Monthly Plan" ? (
-                          <>
-                            <li>$0 Down</li>
-                            <li>$200 per month</li>
-                            <li>Ongoing support and updates</li>
-                          </>
-                        ) : (
-                          <>
-                            <li>Custom quote based on project scope</li>
-                            <li>Full ownership upon completion</li>
-                            <li>30 days of post-launch support</li>
-                          </>
-                        )}
-                      </ul>
-                      <button className="bg-white text-gray-900 font-bold py-2 px-4 rounded w-full">
-                        Get Started
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
+    //         <div className="flex-1 w-full max-w-6xl">
+    //           <motion.div
+    //             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
+    //             initial={{ y: 50, opacity: 0 }}
+    //             animate={{ y: 0, opacity: 1 }}
+    //             transition={{ delay: 0.5, staggerChildren: 0.2 }}
+    //           >
+    //             {["One-Time Payment", "Monthly Plan"].map((plan, index) => (
+    //               <motion.div
+    //                 key={index}
+    //                 className="bg-gray-900 p-8 rounded-lg shadow-lg relative overflow-hidden group"
+    //                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" }}
+    //               >
+    //                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/50 to-indigo-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    //                 <div className="relative z-10">
+    //                   <h3 className="text-3xl font-semibold mb-4">{plan}</h3>
+    //                   <ul className="list-disc list-inside space-y-2 mb-6">
+    //                     {plan === "Monthly Plan" ? (
+    //                       <>
+    //                         <li>$0 Down</li>
+    //                         <li>$200 per month</li>
+    //                         <li>Ongoing support and updates</li>
+    //                       </>
+    //                     ) : (
+    //                       <>
+    //                         <li>Custom quote based on project scope</li>
+    //                         <li>Full ownership upon completion</li>
+    //                         <li>30 days of post-launch support</li>
+    //                       </>
+    //                     )}
+    //                   </ul>
+    //                   <button className="bg-white text-gray-900 font-bold py-2 px-4 rounded w-full">
+    //                     Get Started
+    //                   </button>
+    //                 </div>
+    //               </motion.div>
+    //             ))}
+    //           </motion.div>
+    //         </div>
 
-          </motion.div>
-        </motion.div>
-      ),
-    },
+    //       </motion.div>
+    //     </motion.div>
+    //   ),
+    // },
     {
       title: "Get in Touch",
       content: (
@@ -336,60 +359,93 @@ function App() {
 
             <div className="flex-1 w-full max-w-lg">
               <motion.form
+                ref={form}
                 className="w-full max-w-lg"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
+                onSubmit={handleSubmit}
               >
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <motion.input
-                      className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600"
-                      type="text"
-                      placeholder="Name"
-                      whileFocus={{ scale: 1.0 }}
-                    />
-                  </div>
-                  <div className="w-full md:w-1/2 px-3">
-                    <motion.input
-                      className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600"
-                      type="email"
-                      placeholder="Email"
-                      whileFocus={{ scale: 1.0 }}
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
-                    <motion.input
-                      className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600"
-                      type="tel"
-                      placeholder="Phone"
-                      whileFocus={{ scale: 1.05 }}
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
-                    <motion.textarea
-                      className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 h-48 resize-none"
-                      placeholder="Your Message"
-                      whileFocus={{ scale: 1.0 }}
-                    ></motion.textarea>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
-                    <motion.button
-                      className="bg-white text-gray-900 font-bold py-2 px-4 rounded w-full"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      type="button"
-                    >
-                      Send Message
-                    </motion.button>
-                  </div>
-                </div>
+                {submissionStatus === 'success' ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="text-green-500 p-4 rounded-lg mb-6"
+                  >
+                    Message sent successfully! We'll get back to you soon.
+                  </motion.div>
+                ) : submissionStatus === 'error' ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-red-500 p-4 rounded-lg mb-6"
+                  >
+                    Failed to send message. Please try again later.
+                  </motion.div>
+                ) : null}
+
+                {submissionStatus !== 'success' && (
+                  <>
+                    <div className="flex flex-wrap -mx-3 mb-6">
+                      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <motion.input
+                          name="from_name"
+                          className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600"
+                          type="text"
+                          placeholder="Name"
+                          whileFocus={{ scale: 1.0 }}
+                          required
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2 px-3">
+                        <motion.input
+                          name="user_email"
+                          className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-600"
+                          type="email"
+                          placeholder="Email"
+                          whileFocus={{ scale: 1.0 }}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap -mx-3 mb-6">
+                      <div className="w-full px-3">
+                        <motion.input
+                          name="user_phone"
+                          className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600"
+                          type="tel"
+                          placeholder="Phone (optional)"
+                          whileFocus={{ scale: 1.05 }}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap -mx-3 mb-6">
+                      <div className="w-full px-3">
+                        <motion.textarea
+                          name="message"
+                          className="appearance-none block w-full bg-gray-900 text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600 h-48 resize-none"
+                          placeholder="Your Message"
+                          whileFocus={{ scale: 1.0 }}
+                          required
+                        ></motion.textarea>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap -mx-3 mb-6">
+                      <div className="w-full px-3">
+                        <motion.button
+                          className="bg-white text-gray-900 font-bold py-2 px-4 rounded w-full"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          type="submit"
+                          disabled={submissionStatus === 'submitting'}
+                        >
+                          {submissionStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                        </motion.button>
+                      </div>
+                    </div>
+                  </>
+                )}
               </motion.form>
             </div>
 
@@ -424,15 +480,16 @@ function App() {
 
   return (
     <div ref={containerRef} className="app h-screen w-full bg-gray-950 snap-y overflow-y-scroll overflow-x-hidden">
+
       <div className="snap-section">
         <div className="snap-section-content">
           <TechLoader />
         </div>
       </div>
 
-      <div className='h-[2px] w-screen bg-gray-500'> </div>
+      <div className='h-[2px] w-screen bg-gray-900'> </div>
 
-      <div className='w-full h-full bg-gray-950 '>
+      <div className='main-content w-full h-full bg-gray-950 '>
         {isContainerReady && <Timeline data={timelineData} containerRef={containerRef} />}
       </div>
     </div>

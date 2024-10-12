@@ -61,10 +61,20 @@ export const Timeline = ({ data, containerRef }) => {
                                     <div
                                         className="hidden md:block h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
                                 </div>
-                                <h3
-                                    className="hidden md:block text-xl md:pl-20 md:text-4xl md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
+                                <motion.h3
+                                    className="hidden md:block text-xl md:pl-20 md:text-4xl md:text-5xl font-bold text-blue-500 "
+                                    initial={{ opacity: 0, y: 0 }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                        y: 0
+                                    }}
+                                    viewport={{ amount: 0.3 }}
+                                    transition={{ duration: 2 }}
+
+                                >
                                     {item.title}
-                                </h3>
+                                </motion.h3>
                             </div>
 
                             <div className="relative px-2 md:pl-20  md:pl-4 w-full">
@@ -73,7 +83,7 @@ export const Timeline = ({ data, containerRef }) => {
                                         initial={{ opacity: 0, y: 0 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ amount: 0.3 }}
-                                        transition={{ duration: 1 }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         {/* <h2
                                             className="md:hidden block text-xl text-left font-bold text-neutral-500 dark:text-neutral-500">

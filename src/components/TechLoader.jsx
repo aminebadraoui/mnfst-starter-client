@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
 const scrollToNextSection = () => {
-    const nextSection = document.querySelector('.snap-section:nth-child(2)');
+    const nextSection = document.querySelector('.main-content');
     if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -82,7 +82,7 @@ const TechLoader = () => {
             </div>
 
             <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-50 text-4xl cursor-pointer z-20"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-4xl cursor-pointer z-20"
                 onClick={scrollToNextSection}
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
